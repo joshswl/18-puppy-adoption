@@ -1,11 +1,8 @@
 // @import 'yoga';
-// @import 'normalize';
 
-@import 'bulma/bulma';
+$blue: hsl(218, 71%,  53%);
+$primary: $blue;
+
+@import 'bulma';
+@import 'normalize';
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
-// @import 'font-awesome';
-@import 'box-sizing';
-@import 'reset';
-
-$c-primary: $c-blue;
-$c-blue: hsl(218, 71%,  53%);
