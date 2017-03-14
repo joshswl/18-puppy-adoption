@@ -4,4 +4,4 @@ test('it is working', (assert) => {
   assert.ok(true);
 });
 
-import './tests/pups-test';
+import './pups-test';
