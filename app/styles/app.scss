@@ -1,8 +1,23 @@
 // @import 'yoga';
 
 $blue: hsl(218, 71%,  53%);
-$primary: $blue;
+$primary-blue: $blue;
 
 @import 'bulma';
 @import 'normalize';
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+
+$m-gutter: 1rem;
+
+.nav {
+  background: $primary-blue;
+
+  a.nav-item {
+    color: white;
+  }
+}
+
+.is-brand {
+  font-size: $m-gutter;
+  font-weight: normal;
+}
