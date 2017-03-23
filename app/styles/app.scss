@@ -3,11 +3,12 @@
 $blue: hsl(218, 71%,  53%);
 $primary-blue: $blue;
 
-@import 'bulma';
-@import 'normalize';
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 
 $m-gutter: 1rem;
+
+@import 'bulma';
+@import 'normalize';
 
 .nav {
   background: $primary-blue;
