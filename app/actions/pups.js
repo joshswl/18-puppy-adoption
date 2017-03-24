@@ -9,6 +9,6 @@ export function findAllComplete(data = []) {
 
 export function findAll() {
   return dispatch => fetch(apiURL)
-    .then(r => r.json())
+    .then(response => response.json())
     .then(pups => dispatch(findAllComplete(pups)));
 }

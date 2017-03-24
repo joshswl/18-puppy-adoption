@@ -28,7 +28,7 @@
                     </p>
                   </div>
                   <div class="media-right">
-                    <h3 class="name">Mochie</h3>
+                    <h3 class="name">Mochi</h3>
                     <router-link to="/:id" class="a is-info">read more</router-link>
                   </div>
                 </div>
@@ -58,10 +58,18 @@
 </template>
 
 <script>
+import store from '../store';
+import { findAll } from '../actions/pups';
+
 export default {
   data() {
     return {
+      pups: this.$select('pups'),
     };
+  },
+
+  created() {
+    store.dispatch(findAll());
   },
 
   methods: {
