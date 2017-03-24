@@ -20,11 +20,11 @@
           <div class="column is-one-third">
             <div class="panel">
               <h2 class="panel-heading">Adopt a Pupper</h2>
-              <div class="panel-block">
+              <div v-for="puppy in puppies" class="panel-block">
                 <div class="media">
                   <div class="media-left">
-                    <p class="image is-64x64">
-                      <img src="images/mochie.jpg" alt="">
+                    <!-- <p class="image is-64x64">
+                      <img :src="puppy.image_url" alt="">
                     </p>
                   </div>
                   <div class="media-right">
@@ -42,7 +42,9 @@
                   </div>
                   <div class="media-right">
                     <h3 class="name">Jack</h3>
-                    <router-link to="/:id" to="/:id">read more</router-link>
+                    <router-link to="/:id" to="/:id">read more</router-link> -->
+                    <h3 class="name">{{puppy.name}}</h3>
+                    <router-link :to="{ name: 'details', params: { id: puppy.id } }" class="button">read more</router-link>
                   </div>
                 </div>
               </div>
