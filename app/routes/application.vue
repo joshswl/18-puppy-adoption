@@ -29,7 +29,7 @@
                   </div>
                   <div class="media-right">
                     <h3 class="name">Mochie</h3>
-                    <a href="/detail(id)" class="button">Read More</a>
+                    <router-link class="a is-info" to="/:id">read more</router-link>
                   </div>
                 </div>
               </div>
@@ -42,7 +42,7 @@
                   </div>
                   <div class="media-right">
                     <h3 class="name">Jack</h3>
-                    <a href="/detail(id)" class="button">Read More</a>
+                    <router-link class="a is-info" to="/:id">read more</router-link>
                   </div>
                 </div>
               </div>

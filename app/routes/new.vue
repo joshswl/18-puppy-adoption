@@ -25,7 +25,7 @@
         <input type="text" class="input">
       </p>
       <p class="control">
-        <label for="pup-breed" class="label">Breed</label>
+        <label for="putp-breed" class="label">Breed</label>
         <input type="text" class="input">
       </p>
       <p class="control">
