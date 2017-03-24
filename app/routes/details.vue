@@ -41,6 +41,7 @@
       </div>
       <article class="message">
         <div class="message-body">
+          <h3 class="subtitle">About Me</h3>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           <strong>Pellentesque risus mi</strong>
           , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum

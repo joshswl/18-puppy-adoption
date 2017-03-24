@@ -2,15 +2,15 @@
   <div class="app">
     <nav class="nav">
       <div class="nav-left">
-        <a href="" class="nav-item is-brand">
+        <router-link to="" class="nav-item is-brand">
           <h2 class="nav-item is-brand">
-            <a href="/" class="nav-item is-active">Puppies</a>
+            <router-link to="/" class="nav-item is-active">Puppies</router-link>
           </h2>
-        </a>
+        </router-link>
       </div>
       <div class="nav-right nav-menu">
-        <a href="/" class="nav-item">All Puppies</a>
-        <a href="/new" class="nav-item">Add Puppy</a>
+        <router-link to="/" class="nav-item">All Puppies</router-link>
+        <router-link to="/new" class="nav-item">Add Puppy</router-link>
       </div>
     </nav>
 
@@ -29,7 +29,7 @@
                   </div>
                   <div class="media-right">
                     <h3 class="name">Mochie</h3>
-                    <router-link class="a is-info" to="/:id">read more</router-link>
+                    <router-link to="/:id" class="a is-info">read more</router-link>
                   </div>
                 </div>
               </div>
@@ -42,7 +42,7 @@
                   </div>
                   <div class="media-right">
                     <h3 class="name">Jack</h3>
-                    <router-link class="a is-info" to="/:id">read more</router-link>
+                    <router-link to="/:id" to="/:id">read more</router-link>
                   </div>
                 </div>
               </div>
