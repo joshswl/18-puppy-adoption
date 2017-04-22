@@ -3,21 +3,18 @@
     <div class="pup-details">
       <h2 class="title has-text-centered">
         Mochi
-        <button class="button is-success">
-          <span class="icon is-small fa fa-paw"></span>
-          <span>I'm adopted!</span>
-        </button>
+        <span class="button is-success"><i class="fa fa-paw fa-fw" aria-hidden="true"></i> I'm Adopted!</span>
       </h2>
       <div class="columns">
         <figure class="column is-half is-offset-one-quarter">
-          <img src="images/mochi.jpg" alt="">
+          <img src="http://placecage.com/400/400" alt="">
         </figure>
       </div>
       <div class="level is-mobile">
         <div class="level-item has-text-centered">
           <div>
             <p class="heading">Age</p>
-            <p class="title">12459870 Years Old</p>
+            <p class="title">3 Months</p>
           </div>
         </div>
         <div class="level-item has-text-centered">
@@ -35,7 +32,7 @@
         <div class="level-item has-text-centered">
           <div>
             <p class="heading">Sex</p>
-            <p class="title">male</p>
+            <p class="title">Male</p>
           </div>
         </div>
       </div>

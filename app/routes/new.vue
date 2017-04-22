@@ -30,7 +30,7 @@
       </p>
       <p class="control">
         <label for="pup-image" class="label">Image URL</label>
-        <input type="text" class="input">
+        <input type="text" v-model="formValues.image-url" class="input">
       </p>
       <p class="control">
         <label for="pup-description" class="label">Description</label>
@@ -45,6 +45,9 @@
 </template>
 
 <script>
+import store from '../store';
+import { create } from '../actions/pups';
+
 export default {
   data() {
     return {
@@ -61,7 +64,11 @@ export default {
   },
 
   methods: {
-
+    submit() {
+      store.dispatch(create(this.formValues)).then(() => {
+        this.$router.push({ name: 'index' });
+      });
+    },
   },
 };
 </script>
