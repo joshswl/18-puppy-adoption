@@ -62,9 +62,14 @@ export default {
     };
   },
 
+  watch: {
+    pups: 'getPuppy',
+    '$route.params.id': 'getPuppy',
+  },
+
   methods: {
     getPuppy() {
-      this.currentPuppy = this.puppies.find(puppy => puppy.id == this.$route.params.id);
+      this.currentPuppy = this.pups.find(puppy => puppy.id == this.$route.params.id);
     },
 
     adoptMe() {
