@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="app__details">
+  <div class="">
     <div v-if="currentPuppy">
       <h2 class="title has-text-centered">
         {{ currentPuppy.name }}
@@ -10,33 +10,35 @@
         </a>
       </h2>
       <div class="columns">
-        <div class="column is-half is-offset-one-quarter">
-          <div class="card is-fullwidth">
-            <div class="card-image">
-              <figure class="image">
-                <img :src="currentPuppy.image_url" alt="">
-              </figure>
-            </div>
-          </div>
-        </div>
+        <figure class="column is-half is-offset-one-quarter">
+          <img v-bind:src="currentPuppy.image_url" alt="">
+        </figure>
       </div>
     </div>
     <nav class="level is-mobile">
       <div class="level-item has-text-centered">
-        <p class="heading">Age</p>
-        <p class="title">{{currentPuppy.age}}</p>
+        <div>
+          <p class="heading">Age</p>
+          <p class="title">{{currentPuppy.age}}</p>
+        </div>
       </div>
       <div class="level-item has-text-centered">
-        <p class="heading">Breed</p>
-        <p class="title">{{currentPuppy.breed}}</p>
+        <div>
+          <p class="heading">Breed</p>
+          <p class="title">{{currentPuppy.breed}}</p>
+        </div>
       </div>
       <div class="level-item has-text-centered">
-        <p class="heading">Color</p>
-        <p class="title">{{currentPuppy.color}}</p>
+        <div>
+          <p class="heading">Color</p>
+          <p class="title">{{currentPuppy.color}}</p>
+        </div>
       </div>
       <div class="level-item has-text-centered">
-        <p class="heading">Sex</p>
-        <p class="title">{{currentPuppy.sex}}</p>
+        <div>
+          <p class="heading">Sex</p>
+          <p class="title">{{currentPuppy.sex}}</p>
+        </div>
       </div>
     </nav>
     <div class="card is-fullwidth">

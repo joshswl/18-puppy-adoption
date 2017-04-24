@@ -29,7 +29,7 @@
                   </figure>
                   <div class="media-right">
                     <div>{{puppy.name}}</div>
-                    <router-link :to="{ name: 'details', params: { id: puppy.id } }" class="button"><small>Read more</small></router-link>
+                    <router-link :to="{ name: 'details', params: { id: puppy.id } }"><small>read more</small></router-link>
                   </div>
                 </div>
               </div>

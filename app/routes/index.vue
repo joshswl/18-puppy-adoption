@@ -20,7 +20,7 @@
         <tr v-if="!puppy.adopted" v-for="puppy in pups">
           <td>{{ puppy.name }}</td>
           <td>{{ puppy.age }}</td>
-          <td><router-link :to="{ name: 'details', params: { id: puppy.id } }">Read More</router-link></td>
+          <td><router-link :to="{ name: 'details', params: { id: puppy.id } }">read more</router-link></td>
         </tr>
       </tbody>
     </table>
