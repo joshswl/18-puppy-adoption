@@ -1,19 +1,19 @@
 <template lang="html">
   <div class="app__new">
     <h2 class="title">Found a Pupper? We can help!</h2>
-    <form action="">
+    <form @submit.prevent="submit">
       <p class="control">
         <label for="pup-name" class="label">Name</label>
-        <input type="text" class="input">
+        <input type="text" class="input" v-model="formValues.name">
       </p>
       <p class="control">
         <label for="pup-age" class="label">Age</label>
-        <input type="text" class="input">
+        <input type="text" class="input" v-model="formValues.age">
       </p>
       <p class="control">
         <label for="pup-sex" class="label">Sex</label>
         <span class="select">
-          <select>
+          <select v-model="formValues.sex">
             <option>Please Select an Option</option>
             <option>Male</option>
             <option>Female</option>
@@ -22,23 +22,23 @@
       </p>
       <p class="control">
         <label for="pup-color" class="label">Color</label>
-        <input type="text" class="input">
+        <input type="text" class="input" v-model="formValues.color">
       </p>
       <p class="control">
-        <label for="putp-breed" class="label">Breed</label>
-        <input type="text" class="input">
+        <label for="pup-breed" class="label">Breed</label>
+        <input type="text" class="input" v-model="formValues.breed">
       </p>
       <p class="control">
         <label for="pup-image" class="label">Image URL</label>
-        <input type="text" v-model="formValues.image-url" class="input">
+        <input type="text" v-model="formValues.image_url" class="input" v-model="formValues.image_url">
       </p>
       <p class="control">
         <label for="pup-description" class="label">Description</label>
-        <textarea type="text" class="input"></textarea>
+        <textarea type="text" class="input" v-model="formValues.description"></textarea>
       </p>
       <p class="control">
         <a href="/" class="button">Back</a>
-        <button class="button is-info">Submit</button>
+        <button class="button is-info" type="submit">Submit</button>
       </p>
     </form>
   </div>
@@ -49,6 +49,7 @@ import store from '../store';
 import { create } from '../actions/pups';
 
 export default {
+  name: 'New',
   data() {
     return {
       formValues: {
@@ -57,7 +58,7 @@ export default {
         sex: '',
         color: '',
         breed: '',
-        'image-url': '',
+        image_url: '',
         description: '',
       }
     };

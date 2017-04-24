@@ -4,13 +4,13 @@
       <div class="nav-left">
         <router-link to="" class="nav-item is-brand">
           <h2 class="nav-item is-brand">
-            <router-link to="/" class="nav-item is-active">Puppies</router-link>
+            <router-link :to="{ name: 'index' }" class="nav-item is-active">Puppies</router-link>
           </h2>
         </router-link>
       </div>
       <div class="nav-right nav-menu">
-        <router-link to="/" class="nav-item">All Puppies</router-link>
-        <router-link to="/new" class="nav-item">Add Puppy</router-link>
+        <router-link :to="{ name: 'index' }" class="nav-item">All Puppies</router-link>
+        <router-link :to="{ name: 'new' }" class="nav-item">Add Puppy</router-link>
       </div>
     </nav>
 
@@ -20,31 +20,16 @@
           <div class="column is-one-third">
             <div class="panel">
               <h2 class="panel-heading">Adopt a Pupper</h2>
-              <div v-for="puppy in puppies" class="panel-block">
+              <div v-for="puppy in pups" class="panel-block">
                 <div class="media">
-                  <div class="media-left">
-                    <!-- <p class="image is-64x64">
+                  <figure class="media-left">
+                    <p class="image is-64x64">
                       <img :src="puppy.image_url" alt="">
                     </p>
-                  </div>
+                  </figure>
                   <div class="media-right">
-                    <h3 class="name">Mochi</h3>
-                    <router-link to="/:id" class="a is-info">read more</router-link>
-                  </div>
-                </div>
-              </div>
-              <div class="panel-block">
-                <div class="media">
-                  <div class="media-left">
-                    <p class="image is-64x64">
-                      <img src="images/pit.jpg" alt="">
-                    </p>
-                  </div>
-                  <div class="media-right">
-                    <h3 class="name">Jack</h3>
-                    <router-link to="/:id" to="/:id">read more</router-link> -->
-                    <h3 class="name">{{puppy.name}}</h3>
-                    <router-link :to="{ name: 'details', params: { id: puppy.id } }" class="button">read more</router-link>
+                    <div>{{puppy.name}}</div>
+                    <router-link :to="{ name: 'details', params: { id: puppy.id } }" class="button"><small>Read more</small></router-link>
                   </div>
                 </div>
               </div>

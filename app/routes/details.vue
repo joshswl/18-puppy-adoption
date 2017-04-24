@@ -1,75 +1,75 @@
 <template lang="html">
   <div class="app__details">
-    <div class="pup-details">
+    <div v-if="currentPuppy">
       <h2 class="title has-text-centered">
-        Mochi
-        <span class="button is-success"><i class="fa fa-paw fa-fw" aria-hidden="true"></i> I'm Adopted!</span>
+        {{ currentPuppy.name }}
+        <a @click="adoptMe" href="#" class="button is-primary" v-bind:class="{'is-success': currentPuppy.adopted }">
+          <span><i class="fa fa-paw fa-fw" aria-hidden="true"></i></span>
+          <span v-if="currentPuppy.adopted">I'm Adopted!</span>
+          <span v-else>Adopt Me!</span>
+        </a>
       </h2>
       <div class="columns">
-        <figure class="column is-half is-offset-one-quarter">
-          <img src="http://placecage.com/400/400" alt="">
-        </figure>
-      </div>
-      <div class="level is-mobile">
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading">Age</p>
-            <p class="title">3 Months</p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading">Breed</p>
-            <p class="title">Maltese Mix</p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading">Color</p>
-            <p class="title">Snow White</p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading">Sex</p>
-            <p class="title">Male</p>
+        <div class="column is-half is-offset-one-quarter">
+          <div class="card is-fullwidth">
+            <div class="card-image">
+              <figure class="image">
+                <img :src="currentPuppy.image_url" alt="">
+              </figure>
+            </div>
           </div>
         </div>
       </div>
-      <article class="message">
-        <div class="message-body">
-          <h3 class="subtitle">About Me</h3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          <strong>Pellentesque risus mi</strong>
-          , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum
-          <a>felis venenatis</a>
-          efficitur. Aenean ac
-          <em>eleifend lacus</em>
-          , in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-        </div>
-      </article>
+    </div>
+    <nav class="level is-mobile">
+      <div class="level-item has-text-centered">
+        <p class="heading">Age</p>
+        <p class="title">{{currentPuppy.age}}</p>
+      </div>
+      <div class="level-item has-text-centered">
+        <p class="heading">Breed</p>
+        <p class="title">{{currentPuppy.breed}}</p>
+      </div>
+      <div class="level-item has-text-centered">
+        <p class="heading">Color</p>
+        <p class="title">{{currentPuppy.color}}</p>
+      </div>
+      <div class="level-item has-text-centered">
+        <p class="heading">Sex</p>
+        <p class="title">{{currentPuppy.sex}}</p>
+      </div>
+    </nav>
+    <div class="card is-fullwidth">
+      <div class="card-content">
+        <h3 class="subtitle">About Me</h3>
+        <p>{{currentPuppy.description}}</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import store from '../store';
+import { findOne, toggleAdopted } from '../actions/pups';
+
 export default {
+  name: 'Details',
   data() {
     return {
-      formValues: {
-        name: '',
-        age: '',
-        sex: '',
-        color: '',
-        breed: '',
-        'image-url': '',
-        description: '',
-      }
+      currentPuppy: null,
+      pups: this.$select('pups'),
+
     };
   },
 
   methods: {
+    getPuppy() {
+      this.currentPuppy = this.puppies.find(puppy => puppy.id == this.$route.params.id);
+    },
 
+    adoptMe() {
+      store.dispatch(toggleAdopted(this.currentPuppy));
+    }
   },
 };
 </script>

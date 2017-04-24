@@ -5,7 +5,7 @@
         <h1 class="title level-item">Puppies for Adoption</h1>
       </div>
       <div class="level-right">
-        <router-link to="/new" class="button level-item is-info">Add a Pupper</router-link>
+        <router-link :to="{ name: 'new' }" class="button level-item is-info">Add a Pupper</router-link>
       </div>
     </div>
     <table class="table">
@@ -17,16 +17,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="puppy in puppies.filter((p) => p.adopted === false)">
+        <tr v-if="!puppy.adopted" v-for="puppy in pups">
           <td>{{ puppy.name }}</td>
           <td>{{ puppy.age }}</td>
-          <td><router-link :to="{ name: 'detail', params: { id: puppy.id } }">Read More</router-link></td>
+          <td><router-link class="a is-info" :to="{ name: 'details', params: {id: puppy.id }}">Read More</router-link></td>
         </tr>
       </tbody>
     </table>
     <div class="level">
       <div class="level-left">
-        <h1 class="title level-item">Adopted Puppers</h1>
+        <h1 class="title level-item">Adopted Puppies</h1>
       </div>
     </div>
     <table class="table">
@@ -38,24 +38,25 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="puppy in puppies.filter((p) => p.adopted === true)">
-          <td>{{ puppy.name }}</td>
-          <td>{{ puppy.age }}</td>
-          <td><router-link :to="{ name: 'detail', params: { id: puppy.id } }">Read More</router-link></td>
+        <tr v-if="puppy.adopted" v-for="puppy in puppies">
+          <td>{{ pups.name }}</td>
+          <td>{{ pups.age }}</td>
+          <td><router-link class="a is-info" :to="{ name: 'details' }">Read More</router-link></td>
         </tr>
       </tbody>
     </table>
   </div>
 </template>
 
-<script
+<script>
 import store from '../store';
-import { findAll } from '../actions/puppy';
+import { findAll } from '../actions/pups';
 
 export default {
+  name: 'Index',
   data() {
     return {
-      puppies: this.$select('puppies'),
+      pups: this.$select('pups'),
     };
   },
 
@@ -68,6 +69,3 @@ export default {
   },
 };
 </script>
-
-
-

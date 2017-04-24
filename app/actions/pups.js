@@ -23,13 +23,13 @@ export function findAll() {
 
 export function findOneComplete(data = {}) {
   return {
-    type: 'PUPPY@ONE_COMPLETE',
+    type: 'PUPPY@FINDONE_COMPLETE',
     data,
   };
 }
 
 export function findOne(id) {
-  return dispatch => fetch(apiURL / id)
+  return dispatch => fetch(`${apiURL}/${id}`)
   .then(r => r.json())
   .then(puppy => dispatch(findOneComplete(puppy)));
 }
@@ -50,4 +50,26 @@ export function create(formData) {
     .then((puppy) => {
       dispatch(createComplete(puppy));
     });
+}
+
+export function updateComplete(data = []) {
+  return {
+    type: 'PUPPY@FINDONE_COMPLETE',
+    data,
+  };
+}
+
+export function update(id, formData) {
+  return dispatch => fetch(`${apiURL}/${id}`, {
+    method: 'PUT',
+    headers: jsonHeaders,
+    body: JSON.stringify(formData),
+  }).then(parseJson)
+    .then((puppy) => {
+      dispatch(updateComplete(puppy));
+    });
+}
+
+export function toggleAdopted(puppy) {
+  return update(puppy.id, { ...puppy, adopted: !puppy.adopted });
 }
