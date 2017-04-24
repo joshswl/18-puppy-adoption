@@ -1,4 +1,4 @@
-const apiURL = 'https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/ryan';
+const apiURL = 'https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/josh';
 const jsonHeaders = {
   Accept: 'application/json',
   'Content-Type': 'application/json'
